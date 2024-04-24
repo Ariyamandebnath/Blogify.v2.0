@@ -1,15 +1,13 @@
 import { Request, Response, NextFunction } from "express";
 
-type AsycFunction =(
+type AsyncFunction = (
     req: Request,
     res: Response,
-    next: NextFunction;
+    next: NextFunction
 ) => Promise<any>;
 
-
-export default (execution:AsycFunction) {
-    (req: Request, res: Response, next:NextFunction){
-        execution(req,res,next).catch(next)
-    }
-
+export default function asyncMiddleware(execution: AsyncFunction) {
+    return function(req: Request, res: Response, next: NextFunction) {
+        execution(req, res, next).catch(next);
+    };
 }
