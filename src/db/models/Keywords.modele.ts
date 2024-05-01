@@ -10,8 +10,6 @@ export default interface Keystore {
     primaryKey: string;
     secondaryKey: string;
     status?: boolean;
-    createdAt?: Date;
-    updatedAt?: Date;
 }
 
 const schema = new Schema<Keystore>(
