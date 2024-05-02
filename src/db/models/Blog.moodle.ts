@@ -21,6 +21,8 @@ export default interface Blog{
     isSubmitted?: boolean;
     isDraft: boolean;
     isPublished?: Date;
+    status?: boolean;
+    publishedAt?: Date;
     createdBy?: User;
     updatedBy?: User;
 }
@@ -129,7 +131,7 @@ const schema = new Schema<Blog>(
     },
     {
         versionKey: false,
-        timestamps: true;
+        timestamps: true
     },
 
 );
@@ -150,4 +152,4 @@ schema.index({ isPublised: 1, status: 1 });
 schema.index({ _id: 1,isPublished:1, status: 1 });
 schema.index({ tag: 1,isPublished:1, status: 1 });
 
-export const BlogModel = model<Blog>(Documen_Name, schema, COLLECTION_NAME);
+export const BlogModel = model<Blog>(DOCUMENT_NAME, schema, COLLECTION_NAME);
