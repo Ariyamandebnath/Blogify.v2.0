@@ -1,5 +1,5 @@
 import { Schema, model, Types } from 'mongoose';
-import asyncHandler from '../../utils/asyncHandler';
+import asyncHandler from '../../utils/helpers/asyncHandler';
 
 export const DOCUMENT_NAME = 'ApiKey';
 export const COLLECTION_NAME = 'api_keys';
