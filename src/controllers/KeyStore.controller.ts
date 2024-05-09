@@ -1,0 +1,67 @@
+import Keystore, { KeystoreModel } from '../db/models/Keystore.modele';
+import { Types } from 'mongoose';
+import User from '../db/models/User.model';
+
+
+async function findforKey(client: User, key: string): Promise<Keystore | null> {
+    return KeystoreModel.findOne({
+        client: client,
+        primaryKey: key,
+        status: true,
+    })
+        .lean()
+        .exec();
+    
+}
+
+
+async function remove(id: Types.ObjectId): Promise<Keystore | null>{
+    return KeystoreModel.findByIdAndDelete(id).lean().exec();
+}
+
+async function removeAllForClient(client: User) {
+    return KeystoreModel.deleteMany({
+        client: client
+    }
+    ).exec();
+
+}
+
+async function find(
+    client: User,
+    primaryKey: string,
+    secondaryKey: string,
+): Promise<Keystore | null> {
+    return KeystoreModel.findOne({
+        client: client,
+        primaryKey: primaryKey,
+        secondaryKey: secondaryKey,
+    })
+        .lean()
+        .exec();
+}
+
+async function create(
+    client: User,
+    primaryKey: string,
+    secondaryKey: string,
+): Promise<Keystore> {
+    const now = new Date();
+    const keystore = await KeystoreModel.create({
+        client: client,
+        primaryKey: primaryKey,
+        secondaryKey: secondaryKey,
+        createdAt: now,
+        updatedAt: now,
+    });
+    return keystore.toObject();
+}
+
+
+export default {
+    findforKey,
+    remove,
+    removeAllForClient,
+    find,
+    create,
+};
