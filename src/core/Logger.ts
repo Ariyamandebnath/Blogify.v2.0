@@ -2,7 +2,7 @@ import { createLogger, transports, format } from 'winston';
 import fs from "fs";
 import path from "path";
 import DailyRotateFile from 'winston-daily-rotate-file';
-import { environment, logDirectory } from "../../constants";
+import { environment, logDirectory } from "../constants";
 
 let dir = logDirectory;
 //resolve absolute path of logs fdifining the path of the directory for storing the logs

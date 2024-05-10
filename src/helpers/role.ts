@@ -1,5 +1,5 @@
-import { RoleCode } from "../../db/models/Role.model";
-import { RoleRequest } from "../../types/app-request";
+import { RoleCode } from "../db/models/Role.model";
+import { RoleRequest } from "../types/app-request";
 import { Response, NextFunction } from "express";
 
 

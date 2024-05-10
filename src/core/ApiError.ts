@@ -1,6 +1,6 @@
 
 import { Response } from 'express';
-import { environment } from '../../constants';
+import { environment } from '../constants';
 import {
   AuthFailureResponse,
   AccessTokenErrorResponse,
