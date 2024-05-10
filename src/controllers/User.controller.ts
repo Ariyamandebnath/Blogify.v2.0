@@ -1,8 +1,8 @@
-import User, { UserModel } from '../db/models/User.model';
-import { RoleModel } from '../db/models/Role.model';
+import User, { UserModel } from '../models/User.model';
+import { RoleModel } from '../models/Role.model';
 import { InternalError, } from '../core/ApiError';
 import { Types } from 'mongoose';
-import Keystore from '../db/models/Keystore.modele';
+import Keystore from '../models/Keystore.modele';
 import KeyStore from './KeyStore.controller'
 
 
