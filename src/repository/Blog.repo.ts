@@ -125,6 +125,10 @@ async function findAllPublished(): Promise<Blog[]> {
     return findDetailedBlogs({ isPublished: true, status: true });
 }
 
+async function findAllSubmissionsForWriter(user: User): Promise<Blog[]>{
+    return findDetailedBlogs({ author: user, status: true, isSubmitted: true });
+}
+
 async function findAllPublishedForWriter(user: User): Promise<Blog[]>{
     return findDetailedBlogs({ author: user, status: true, isPublished: true });
 }
@@ -150,10 +154,10 @@ async function findLatestBlogs(pageNumber: number,
 
 async function searchSimilarBlogs(blogs: Blog, limit: number): Promise<Blog[]>{
     return BlogModel.find({
-        $text: { $search: blog.title, $caseSensitive: false },
+        $text: { $search: blogs.title, $caseSensitive: false },
         status: true,
         isPublished: true,
-        _id: { $ne: blog._id },
+        _id: { $ne: blogs._id },
     },
         {
             similarity: { $meta: 'textScore' },
