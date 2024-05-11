@@ -3,7 +3,7 @@ import { RoleModel } from '../models/Role.model';
 import { InternalError, } from '../core/ApiError';
 import { Types } from 'mongoose';
 import Keystore from '../models/Keystore.modele';
-import KeyStore from './KeyStore.controller'
+import KeyStore from './KeyStore.repo'
 
 
 async function exists(id: Types.ObjectId): Promise<boolean> {

@@ -25,6 +25,8 @@ export default interface Blog{
     publishedAt?: Date;
     createdBy?: User;
     updatedBy?: User;
+    createdAt?: Date;
+    updatedAt?: Date;
 }
 
 const schema = new Schema<Blog>(
@@ -128,10 +130,14 @@ const schema = new Schema<Blog>(
             required: true,
             select: false,
         },
+        createdAt: {
+            type: Date,
+            required: true,
+            select: false,
+        }
     },
     {
         versionKey: false,
-        timestamps: true
     },
 
 );
