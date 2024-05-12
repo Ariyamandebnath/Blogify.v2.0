@@ -1,7 +1,6 @@
 import Joi from 'joi';
 import { Header } from '../core/utils';
 import { JoiAuthBearer } from '../helpers/validator';
-import apikey from './apikey';
 
 
 export default {
