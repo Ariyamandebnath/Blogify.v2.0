@@ -1,5 +1,4 @@
 import express, { Request, Response, NextFunction } from 'express';
-import logger from './core/Logger';
 import cors from "cors";
 import cookieParser from 'cookie-parser';
 import { CORS_ORIGIN, environment } from './constants';
@@ -12,7 +11,7 @@ import {
 
 
 process.on('uncaughtException', (e) => {
-    logger.error(e);
+    console.error(e);
 });
 
 const app = express();
@@ -45,14 +44,14 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
     if (err instanceof ApiError) {
         ApiError.handle(err, res);
         if (err.type === ErrorType.INTERNAL)
-            logger.error(
+            console.error(
                 `500 - ${err.message} - ${req.originalUrl} - ${req.method} - ${req.ip}`,
     );
     } else {
-        logger.error(
+        console.error(
             `500 - ${err.message} - ${req.originalUrl} - ${req.method} - ${req.ip}`,
         );
-    logger.error(err);
+    console.error(err);
     if (environment === 'development') {
         return res.status(500).send(err);
     }
