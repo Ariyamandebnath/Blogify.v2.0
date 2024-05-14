@@ -9,7 +9,7 @@ async function findByCode(code: string): Promise<Role | null>{
 }
 
 
-async function findByCodes(codes: string[]): Promise<Role[]>{
+async function findByCodes(codes: string[]): Promise<Role[] >{
     return RoleModel.findOne({
         code: { $in: codes },
         status: true

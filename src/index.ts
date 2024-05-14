@@ -1,5 +1,4 @@
 import dotenv from 'dotenv';
-import logger from "./core/Logger";
 import { port } from "./constants";
 import app from "./app";
 import connectDB from "./db/db";
