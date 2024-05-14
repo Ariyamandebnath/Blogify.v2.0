@@ -1,15 +1,14 @@
 import express, { Request, Response, NextFunction } from 'express';
-import logger from './utils/Logger';
+import logger from './core/Logger';
 import cors from "cors";
 import cookieParser from 'cookie-parser';
 import { CORS_ORIGIN, environment } from './constants';
-import './db';
 import {
     NotFoundError,
     ApiError,
     InternalError,
     ErrorType,
-} from './utils/ApiError';
+} from './core/ApiError';
 
 
 process.on('uncaughtException', (e) => {
