@@ -1,11 +1,11 @@
 import express from 'express';
 import { TokenRefreshResponse } from '../../core/ApiResponse';
-import { ProtectedRequest } from 'app-request';
+import { ProtectedRequest } from '../../types/app-request';
 import { Types } from 'mongoose';
-import UserRepo from '../../database/repository/UserRepo';
+import UserRepo from '../../repositorys/User.repo';
 import { AuthFailureError } from '../../core/ApiError';
 import JWT from '../../core/JWT';
-import KeystoreRepo from '../../database/repository/KeystoreRepo';
+import KeystoreRepo from '../../repositorys/User.repo';
 import crypto from 'crypto';
 import {
   validateTokenData,
