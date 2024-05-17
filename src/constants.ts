@@ -20,6 +20,13 @@ export const tokenInfo = {
 };
 
 
+export const redis = {
+    host: process.env.REDIS_HOST || '',
+    port: parseInt(process.env.REDIS_PORT || ''),
+    password: process.env.REDIS_PASSWORD || '',
+}
+
+
 export const caching = {
     contentCacheDuration: parseInt(
         process.env.CONTENT_CACHE_DURATION_MILLIES || '6000000',
