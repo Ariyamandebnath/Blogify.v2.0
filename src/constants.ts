@@ -20,3 +20,8 @@ export const tokenInfo = {
 };
 
 
+export const caching = {
+    contentCacheDuration: parseInt(
+        process.env.CONTENT_CACHE_DURATION_MILLIES || '6000000',
+    ),
+};
