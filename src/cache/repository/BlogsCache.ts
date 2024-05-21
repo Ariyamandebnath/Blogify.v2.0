@@ -1,8 +1,8 @@
 import { getListRange, setList } from '../query';
-import Blog from '../../database/model/Blog';
+import Blog from '../../models/Blog.moodle';
 import { DynamicKey, getDynamicKey } from '../keys';
 import { addMillisToCurrentDate } from '../../helpers/utils';
-import { caching } from '../../config';
+import { caching } from '../../constants';
 import { Types } from 'mongoose';
 
 function getKeyForSimilar(blogId: Types.ObjectId) {

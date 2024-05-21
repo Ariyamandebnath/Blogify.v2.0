@@ -1,8 +1,8 @@
 import { getJson, setJson } from '../query';
 import { Types } from 'mongoose';
-import Blog from '../../database/model/Blog';
+import Blog from '../../models/Blog.moodle';
 import { DynamicKey, getDynamicKey } from '../keys';
-import { caching } from '../../config';
+import { caching } from '../../constants';
 import { addMillisToCurrentDate } from '../../helpers/utils';
 
 function getKeyForId(blogId: Types.ObjectId) {
