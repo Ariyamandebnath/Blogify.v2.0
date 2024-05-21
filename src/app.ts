@@ -2,12 +2,14 @@ import express, { Request, Response, NextFunction } from 'express';
 import cors from "cors";
 import cookieParser from 'cookie-parser';
 import { CORS_ORIGIN, environment } from './constants';
+import './cache';
 import {
     NotFoundError,
     ApiError,
     InternalError,
     ErrorType,
 } from './core/ApiError';
+import routes from './routes';
 
 
 process.on('uncaughtException', (e) => {
@@ -32,6 +34,9 @@ app.use(express.urlencoded({
 }));
 app.use(express.static("public "));
 app.use(cookieParser());
+
+//Routes
+app.use('/', routes);
 
 
 
