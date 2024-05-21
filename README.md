@@ -34,6 +34,92 @@ Following are the features of this project:
 
 * **A pure backend project**: Creating a backend project brings seperation of concern an helps in scaling the project much easier if the project is build together with a frontend .
 
+ ## Project Directory Structure
+ ```
+├── .vscode
+│   ├── settings.json
+│   ├── tasks.json
+│   └── launch.json
+├── .templates
+├── src
+│   ├── index.ts
+│   ├── app.ts
+│   ├── constants.ts
+│   ├── auth
+│   │   ├── apikey.ts
+│   │   ├── authUtils.ts
+│   │   ├── authentication.ts
+│   │   ├── authorization.ts
+│   │   └── schema.ts
+│   ├── core
+│   │   ├── ApiError.ts
+│   │   ├── ApiResponse.ts
+│   │   ├── JWT.ts
+│   │   └── utils.ts
+│   ├── cache
+│   │   ├── index.ts
+│   │   ├── keys.ts
+│   │   ├── query.ts
+│   │   └── repository
+│   │       ├── BlogCache.ts
+│   │       └── BlogsCache.ts
+│   ├── db
+│   │   └── db.ts  
+│   ├── helpers
+│   │   ├── asyncHandler.ts
+│   │   ├── permission.ts
+│   │   ├── role.ts
+│   │   ├── security.ts
+│   │   ├── utils.ts
+│   │   └── validator.ts
+|   ├── models
+│   │   ├── ApiKey.model.ts
+│   │   ├── Blog.model.ts
+│   │   ├── Keystore.model.ts
+│   │   ├── Role.model.ts
+│   │   └── User.model.ts
+|   └── repository
+│   │       ├── ApiKey.repo.ts
+│   │       ├── Blog.repo.ts
+│   │       ├── Keystore.repo.ts
+│   │       ├── Role.repo.ts
+│   │       └── User.repo.ts
+│   ├── routes
+│   │   ├── access
+│   │   │   ├── credential.ts
+│   │   │   ├── login.ts
+│   │   │   ├── logout.ts
+│   │   │   ├── schema.ts
+│   │   │   ├── signup.ts
+│   │   │   ├── token.ts
+│   │   │   └── utils.ts
+│   │   ├── blog
+│   │   │   ├── editor.ts
+│   │   │   ├── index.ts
+│   │   │   ├── schema.ts
+│   │   │   └── writer.ts
+│   │   ├── blogs
+│   │   │   ├── index.ts
+│   │   │   └── schema.ts
+│   │   ├── index.ts
+│   │   └── profile
+│   │       ├── schema.ts
+│   │       └── user.ts
+│   └── types
+│       └── app-request.d.ts
+├── keys
+│   ├── private.pem
+│   └── public.pem
+├── .env
+├── .gitignore
+├── .eslintrc
+├── .eslintignore
+├── .prettierrc
+├── .prettierignore
+├── package-lock.json
+├── package.json
+└── tsconfig.json
+ ```
 
 
  ## Directory Traversal for Signup API call
