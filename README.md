@@ -32,7 +32,7 @@ Following are the features of this project:
 * **Redis Memcache**: I have used the redis server for caching the items which does not change frequently. It will boost the performance of our system.
 * **Async execution**: I have used async/await for the promises and made sure to use the non-blocking version of all the functions with few exceptions.
 
-* **A pure backend project**: Creating a backend project brings seperation of concern an helps in scaling the project much easier if the project is build together with a frontend .
+* **A pure backend project**: Creating a backend project brings seperation of concern an helps in scaling the project much easier if the project is build together with a frontend.
 
 ## Project Directory Structure
  ```
