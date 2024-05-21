@@ -34,7 +34,7 @@ Following are the features of this project:
 
 * **A pure backend project**: Creating a backend project brings seperation of concern an helps in scaling the project much easier if the project is build together with a frontend .
 
- ## Project Directory Structure
+## Project Directory Structure
  ```
 ├── .vscode
 │   ├── settings.json
