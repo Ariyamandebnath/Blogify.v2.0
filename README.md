@@ -36,11 +36,6 @@ Following are the features of this project:
 
 ## Project Directory Structure
  ```
-├── .vscode
-│   ├── settings.json
-│   ├── tasks.json
-│   └── launch.json
-├── .templates
 ├── src
 │   ├── index.ts
 │   ├── app.ts
